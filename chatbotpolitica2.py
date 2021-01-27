@@ -12,6 +12,13 @@ Original file is located at
 import os
 import re
 import random
+import numpy as np
+from tensorflow import keras
+from keras.layers import Input, LSTM, Dense
+from keras.models import Model
+from keras.models import load_model
+
+
 base1 = os.getcwd()
 base_dir= base1 + "/"
 data_path = base_dir + "Preguntas.txt"
@@ -28,8 +35,6 @@ lines2 = [" ".join(re.findall(r"\w+",line)) for line in lines2]
 # Grouping lines by response pair
 pairs = list(zip(lines,lines2))
 #random.shuffle(pairs)
-
-import numpy as np
 
 input_docs = []
 target_docs = []
@@ -95,9 +100,6 @@ for line, (input_doc, target_doc) in enumerate(zip(input_docs, target_docs)):
 print(pairs[:5])
 print(input_docs[:5])
 
-from tensorflow import keras
-from keras.layers import Input, LSTM, Dense
-from keras.models import Model
 #Dimensionality
 dimensionality = 256
 #The batch size and number of epochs
@@ -128,12 +130,6 @@ training_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', met
 
 #training_model.save()
 training_model.save_weights(base_dir)
-
-from keras.models import load_model
-from tensorflow import keras
-from keras.layers import Input, LSTM, Dense
-from keras.models import Model
-
 
 entrenamiento = base_dir + 'entrenado' 
 #training_model = load_model(entrenamiento)
