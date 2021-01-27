@@ -222,8 +222,5 @@ class ChatBot:
   
 chatbot = ChatBot()
 
-ChatBot.generate_response
 #chatbot.start_chat()
-
-chatbot.start_chat()
 
