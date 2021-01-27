@@ -54,7 +54,7 @@ def webhook():
                     if inteligente:
                         if messaging_event.get('delivery'):
                             dir1 = os.getcwd()
-                            dirpy= dir1 + "/chatbotpolitica2.py"
+                            dirpy= Andrewco1/politica_modelo
                             python dirpy
                             send_message(sender_id, chatbot.generate_response(message_text))
                         else:
