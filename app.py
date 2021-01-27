@@ -56,7 +56,7 @@ def webhook():
                         dir1 = os.getcwd()
                         dirpy= dir1 + "/chatbotpolitica2.py"
                         python dirpy
-                        send_message(sender_id, chatbot.chat(message_text))
+                        send_message(sender_id, chatbot.generate_response(message_text))
                     else:
                         send_message(sender_id, 'Hola')
 
