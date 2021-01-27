@@ -6,6 +6,13 @@ import sys
 import json
 import requests
 from flask import Flask, request
+import re
+import random
+import numpy as np
+from tensorflow import keras
+from keras.layers import Input, LSTM, Dense
+from keras.models import Model
+from keras.models import load_model
 
 import spacy
 spacy.load("en_core_web_sm")
@@ -52,17 +59,6 @@ def webhook():
                     message_text = messaging_event['message']['text']  # el texto del mensaje
                     
                     if inteligente:
-                    
-                        import os
-                        import re
-                        import random
-                        import numpy as np
-                        from tensorflow import keras
-                        from keras.layers import Input, LSTM, Dense
-                        from keras.models import Model
-                        from keras.models import load_model
-
-
                         base1 = os.getcwd()
                         base_dir= base1 + "/"
                         data_path = base_dir + "Preguntas.txt"
