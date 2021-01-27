@@ -52,13 +52,13 @@ def webhook():
                     message_text = messaging_event['message']['text']  # el texto del mensaje
                     
                     if inteligente:
-                    if messaging_event.get('delivery'):
-                        dir1 = os.getcwd()
-                        dirpy= dir1 + "/chatbotpolitica2.py"
-                        python dirpy
-                        send_message(sender_id, chatbot.generate_response(message_text))
-                    else:
-                        send_message(sender_id, 'Hola')
+                        if messaging_event.get('delivery'):
+                            dir1 = os.getcwd()
+                            dirpy= dir1 + "/chatbotpolitica2.py"
+                            python dirpy
+                            send_message(sender_id, chatbot.generate_response(message_text))
+                        else:
+                            send_message(sender_id, 'Hola')
 
                   # confirmacion de delivery
                     pass
