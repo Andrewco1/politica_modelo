@@ -144,7 +144,7 @@ def webhook():
                         dimensionality = 256
                         #The batch size and number of epochs
                         batch_size = 10
-                        epochs = 100
+                        epochs = 500
                         #Encoder
                         encoder_inputs = Input(shape=(None, num_encoder_tokens))
                         encoder_lstm = LSTM(dimensionality, return_state=True)
