@@ -137,8 +137,8 @@ def webhook():
                                 if timestep > 0:
                                     decoder_target_data[line, timestep - 1, target_features_dict[token]] = 1.
 
-                        print(pairs[:5])
-                        print(input_docs[:5])
+                        #print(pairs[:5])
+                        #print(input_docs[:5])
 
                         #Dimensionality
                         dimensionality = 256
